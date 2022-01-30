@@ -1,0 +1,28 @@
+# The Base/ Default Application Configuration File
+
+# Web Server Configuration
+server:
+  port: 8082
+  servlet:
+    context-path: /employee-app
+ 
+# Database Configuration  
+spring:
+  application:
+    name: employee-app
+  datasource:
+    url: jdbc:mysql://localhost:3306/root
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create
+# Log Configuration      
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  level:
+    root: info
